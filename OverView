@@ -1,0 +1,273 @@
+# PROJET ARTHEMIS
+## Canevas — Cahier des charges, Normes et Standards de travail d'équipe
+
+---
+
+## 1. PRÉSENTATION DU PROJET
+
+| Élément | Description |
+|---|---|
+| **Nom du projet** | ARTHEMIS |
+| **Type** | Série d'applications numériques |
+| **Vision** | Améliorer le quotidien des habitants du Cameroun |
+| **Axes d'impact** | Social • Sanitaire • Sécuritaire |
+| **Porteur de projet** | Nicolas |
+| **Date de création du document** | Septembre 2026 |
+| **Version du document** | 1.0 |
+
+### 1.1 Contexte et justification
+*(À compléter : quel(s) problème(s) concret(s) ARTHEMIS résout-il ? Quelles observations de terrain justifient le projet ?)*
+
+### 1.2 Objectifs généraux
+- Objectif 1 : ...
+- Objectif 2 : ...
+- Objectif 3 : ...
+
+### 1.3 Objectifs spécifiques par axe
+
+| Axe | Objectif spécifique | Application(s) envisagée(s) |
+|---|---|---|
+| Social | | |
+| Sanitaire | | |
+| Sécuritaire | | |
+
+### 1.4 Bénéficiaires cibles
+- Utilisateurs finaux : ...
+- Partenaires institutionnels potentiels (Mairies, MINSANTE, MINDDEVEL, ONG, etc.) : ...
+
+---
+
+## 2. PÉRIMÈTRE DU PROJET
+
+### 2.1 Ce qui est inclus (In scope)
+- ...
+
+### 2.2 Ce qui est exclu (Out of scope)
+- ...
+
+### 2.3 Livrables attendus
+| Livrable | Description | Échéance |
+|---|---|---|
+| Application 1 (MVP) | | |
+| Documentation technique | | |
+| Documentation utilisateur | | |
+| Rapport de tests | | |
+
+---
+
+## 3. PARTIES PRENANTES ET RÔLES
+
+| Rôle | Responsabilités | Nom |
+|---|---|---|
+| Chef de projet / Product Owner | Vision produit, priorisation, arbitrages | |
+| Lead développeur / Tech Lead | Choix techniques, revue de code, architecture | |
+| Développeur(s) Front-end | Interfaces utilisateur | |
+| Développeur(s) Back-end | Logique métier, API, base de données | |
+| Designer UI/UX | Maquettes, expérience utilisateur | |
+| QA / Testeur | Tests, remontée de bugs | |
+| Community/Field manager | Lien avec les utilisateurs terrain | |
+
+### 3.1 Règles de gouvernance
+- Fréquence des réunions d'équipe : *(ex: point hebdomadaire le lundi)*
+- Canal de communication principal : *(ex: WhatsApp/Discord/Slack)*
+- Outil de gestion de tâches : *(ex: GitHub Projects, Trello, Notion)*
+- Processus de prise de décision : *(ex: consensus, arbitrage du PO en cas de blocage)*
+
+---
+
+## 4. CONTRAINTES
+
+| Type | Détail |
+|---|---|
+| Techniques | Connectivité limitée dans certaines zones, faible débit, appareils bas de gamme |
+| Budgétaires | *(à préciser)* |
+| Temporelles | *(à préciser)* |
+| Réglementaires | Protection des données personnelles, conformité locale |
+| Linguistiques | Support français / anglais (bilinguisme camerounais) |
+
+---
+
+## 5. MÉTHODOLOGIE DE TRAVAIL
+
+### 5.1 Approche
+- Méthodologie : **Agile / Scrum léger** recommandé pour une petite équipe
+- Sprints de 1 à 2 semaines
+- Cérémonies : planification de sprint, daily stand-up (peut être asynchrone via message), revue de sprint, rétrospective
+
+### 5.2 Définition of Done (DoD)
+Une fonctionnalité est considérée "terminée" quand :
+- [ ] Le code est écrit et fonctionne localement
+- [ ] Le code est revu par au moins un autre membre (Pull Request approuvée)
+- [ ] Les tests (unitaires/manuels) passent
+- [ ] La documentation associée est mise à jour
+- [ ] La fonctionnalité est mergée sur la branche principale sans casser le build
+
+---
+
+## 6. NORMES ET STANDARDS DE CODAGE
+
+### 6.1 Principes généraux
+- Code lisible avant tout : privilégier la clarté à l'astuce
+- Nommage explicite des variables, fonctions, fichiers (en anglais, de préférence)
+- Éviter la duplication de code (principe DRY)
+- Commenter le "pourquoi", pas le "quoi" (le code doit déjà dire quoi)
+- Un fichier = une responsabilité claire
+
+### 6.2 Convention de nommage
+| Élément | Convention | Exemple |
+|---|---|---|
+| Variables / fonctions (JS) | camelCase | `getUserProfile()` |
+| Classes / Composants | PascalCase | `UserCard` |
+| Fichiers de composants | PascalCase | `UserCard.jsx` |
+| Fichiers utilitaires | kebab-case | `date-utils.js` |
+| Constantes globales | UPPER_SNAKE_CASE | `MAX_RETRY_COUNT` |
+| Base de données (tables/colonnes) | snake_case | `user_profiles` |
+
+### 6.3 Formatage
+- Utiliser un formateur automatique (ex : Prettier) et un linter (ex : ESLint) configurés au niveau du repo
+- Indentation cohérente (2 ou 4 espaces, à fixer une fois pour toutes)
+- Un fichier `.editorconfig` à la racine du projet pour harmoniser entre éditeurs
+
+---
+
+## 7. STANDARDS GITHUB
+
+### 7.1 Structure du dépôt
+```
+arthemis/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── workflows/          # CI/CD
+├── docs/
+├── src/
+├── tests/
+├── .editorconfig
+├── .gitignore
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── LICENSE
+└── README.md
+```
+
+### 7.2 Convention de branches (GitHub Flow simplifié)
+| Branche | Usage |
+|---|---|
+| `main` | Code stable, toujours déployable |
+| `develop` | Intégration des fonctionnalités avant release (optionnel selon taille équipe) |
+| `feature/nom-de-la-feature` | Développement d'une nouvelle fonctionnalité |
+| `fix/nom-du-bug` | Correction de bug |
+| `hotfix/nom-du-probleme` | Correction urgente en production |
+| `chore/description` | Tâches techniques (dépendances, config, etc.) |
+
+**Règle :** jamais de commit direct sur `main`. Tout passe par une Pull Request.
+
+### 7.3 Convention de commits (Conventional Commits)
+Format : `type(portée): description courte`
+
+| Type | Usage |
+|---|---|
+| `feat` | Nouvelle fonctionnalité |
+| `fix` | Correction de bug |
+| `docs` | Documentation uniquement |
+| `style` | Formatage, sans impact sur la logique |
+| `refactor` | Refactorisation sans changement de comportement |
+| `test` | Ajout/modification de tests |
+| `chore` | Maintenance, dépendances, config |
+
+Exemple : `feat(auth): ajout de la connexion par numéro de téléphone`
+
+### 7.4 Pull Requests
+- Une PR = une fonctionnalité ou un correctif ciblé (éviter les PR géantes)
+- Titre clair suivant la convention de commits
+- Description obligatoire : contexte, changements, comment tester
+- Au moins **1 relecteur (reviewer)** requis avant merge
+- Lier la PR à l'issue correspondante (`Closes #12`)
+- Supprimer la branche après merge
+
+**Template de PR suggéré (`.github/PULL_REQUEST_TEMPLATE.md`) :**
+```markdown
+## Description
+<!-- Que fait cette PR ? -->
+
+## Type de changement
+- [ ] Bug fix
+- [ ] Nouvelle fonctionnalité
+- [ ] Breaking change
+- [ ] Documentation
+
+## Comment tester
+<!-- Étapes pour vérifier le bon fonctionnement -->
+
+## Checklist
+- [ ] Mon code respecte les standards du projet
+- [ ] J'ai testé mes changements
+- [ ] J'ai mis à jour la documentation si nécessaire
+```
+
+### 7.5 Issues
+- Utiliser des templates d'issues : `Bug report`, `Feature request`
+- Labels standards : `bug`, `enhancement`, `documentation`, `good first issue`, `priority:high/medium/low`, `blocked`
+- Chaque issue assignée à un unique responsable
+- Lien vers un tableau GitHub Projects (Kanban : `To do` / `In progress` / `In review` / `Done`)
+
+### 7.6 Protection de branche
+- `main` protégée : pas de push direct, PR obligatoire, au moins 1 review approuvée
+- Statut CI obligatoire au vert avant merge (tests + build)
+
+### 7.7 Versioning
+- Utiliser le **Semantic Versioning** (`MAJOR.MINOR.PATCH`)
+  - MAJOR : changement incompatible
+  - MINOR : nouvelle fonctionnalité rétrocompatible
+  - PATCH : correction de bug
+
+### 7.8 Documentation obligatoire du dépôt
+| Fichier | Contenu |
+|---|---|
+| `README.md` | Présentation, installation, usage, stack technique |
+| `CONTRIBUTING.md` | Comment contribuer, workflow Git, conventions |
+| `CODE_OF_CONDUCT.md` | Règles de conduite de l'équipe/communauté |
+| `LICENSE` | Licence du projet |
+
+---
+
+## 8. GESTION DE LA QUALITÉ
+
+- Revue de code systématique avant tout merge
+- Tests automatisés recommandés dès que possible (unitaires a minima)
+- Intégration continue (CI) via GitHub Actions : lint + tests à chaque PR
+- Suivi des bugs centralisé dans les Issues GitHub (pas de bug report par message privé)
+
+---
+
+## 9. SÉCURITÉ ET CONFIDENTIALITÉ DES DONNÉES
+
+*(Point critique vu la nature sanitaire/sécuritaire des applications)*
+- Aucune donnée sensible en dur dans le code (utiliser des variables d'environnement `.env`, jamais commit)
+- Chiffrement des données sensibles (santé, localisation) en transit et au repos
+- Respect des principes de minimisation des données collectées
+- Définir clairement qui a accès à quelles données au sein de l'équipe
+
+---
+
+## 10. PLANNING PRÉVISIONNEL
+
+| Phase | Description | Durée estimée |
+|---|---|---|
+| Cadrage | Finalisation cahier des charges, choix stack technique | |
+| Conception | Maquettes, architecture technique | |
+| Développement MVP | Première application fonctionnelle | |
+| Tests terrain | Validation avec utilisateurs réels | |
+| Lancement | Déploiement / publication | |
+| Itérations | Améliorations continues | |
+
+---
+
+## 11. ANNEXES
+- Glossaire des termes techniques
+- Stack technique retenue *(à définir : Front-end, Back-end, BDD, hébergement)*
+- Contacts des parties prenantes
+
+---
+
+*Ce document est un canevas de départ. Il doit être complété, discuté et validé collectivement par l'équipe ARTHEMIS avant d'être considéré comme la référence officielle du projet.*
